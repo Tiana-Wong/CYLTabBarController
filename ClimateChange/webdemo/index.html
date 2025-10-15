@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🌎 Climate Change</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active" onclick="showSection('home', event)">Home</a></li>
+            <li><a href="#data" onclick="showSection('data', event)">Data</a></li>
+            <li><a href="#actions" onclick="showSection('actions', event)">Actions</a></li>
+            <li><a href="#news" onclick="showSection('news', event)">News</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" class="section active">
+            <h1>Climate Change Overview</h1>
+            <div class="card">
+                <h2>Global Temperature</h2>
+                <div class="chart-placeholder">[Temperature Chart]</div>
+                <p>Current global temperature increase: <strong>+1.1°C</strong> above pre-industrial levels</p>
+            </div>
+            <div class="card">
+                <h2>Key Indicators</h2>
+                <ul>
+                    <li>CO₂ Level: 412 ppm</li>
+                    <li>Sea Level Rise: +3.3 mm/year</li>
+                    <li>Arctic Ice: -13% per decade</li>
+                </ul>
+            </div>
+        </section>
+        <section id="data" class="section">
+            <h1>Climate Data</h1>
+            <div class="card">
+                <h2>CO₂ Levels</h2>
+                <div class="chart-placeholder">[CO₂ Chart]</div>
+                <p>Historical CO₂ levels and projections.</p>
+            </div>
+            <div class="card">
+                <h2>Recent Measurements</h2>
+                <ul>
+                    <li>Temperature Anomaly: +0.92°C</li>
+                    <li>Ocean Heat Content: +228 ZJ</li>
+                    <li>Greenhouse Gas Index: 1.45</li>
+                </ul>
+            </div>
+        </section>
+        <section id="actions" class="section">
+            <h1>Take Action</h1>
+            <div class="card">
+                <h2>Your Carbon Footprint</h2>
+                <div class="chart-placeholder">[Calculator]</div>
+            </div>
+            <div class="card">
+                <h2>How You Can Help</h2>
+                <ul>
+                    <li>Reduce energy consumption</li>
+                    <li>Use public transportation</li>
+                    <li>Support renewable energy</li>
+                    <li>Reduce waste</li>
+                </ul>
+            </div>
+        </section>
+        <section id="news" class="section">
+            <h1>Climate News</h1>
+            <div class="card">
+                <h2>Latest Updates</h2>
+                <article>
+                    <h3>Global Climate Summit 2025</h3>
+                    <p>World leaders gather to discuss new emission targets...</p>
+                </article>
+            </div>
+            <div class="card">
+                <h2>Research Highlights</h2>
+                <article>
+                    <h3>New Study on Ocean Acidification</h3>
+                    <p>Scientists discover increasing impact on marine life...</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Climate Change Awareness Demo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

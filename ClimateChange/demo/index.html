@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change App Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .phone-container {
+            width: 375px;
+            height: 812px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #333;
+        }
+
+        .status-bar {
+            height: 44px;
+            background: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .content {
+            height: calc(100% - 94px);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tabbar {
+            height: 50px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #999;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .tab-item.active {
+            color: #228B22;
+        }
+
+        .tab-icon {
+            font-size: 24px;
+            margin-bottom: 2px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #228B22;
+        }
+
+        .nav-bar {
+            height: 44px;
+            background: #228B22;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .data-chart {
+            width: 100%;
+            height: 200px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="status-bar">12:00</div>
+        <div class="nav-bar">Climate Overview</div>
+        <div class="content">
+            <!-- Home Tab -->
+            <div class="tab-content active" id="home">
+                <div class="card">
+                    <h2>Global Temperature</h2>
+                    <div class="data-chart">[Temperature Chart Placeholder]</div>
+                    <p>Current global temperature increase: +1.1°C above pre-industrial levels</p>
+                </div>
+                <div class="card">
+                    <h2>Key Indicators</h2>
+                    <ul>
+                        <li>CO2 Level: 412 ppm</li>
+                        <li>Sea Level Rise: +3.3 mm/year</li>
+                        <li>Arctic Ice: -13% per decade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Data Tab -->
+            <div class="tab-content" id="data">
+                <div class="card">
+                    <h2>Climate Data Analysis</h2>
+                    <div class="data-chart">[CO2 Levels Chart Placeholder]</div>
+                    <p>Historical CO2 levels and projections</p>
+                </div>
+                <div class="card">
+                    <h2>Recent Measurements</h2>
+                    <ul>
+                        <li>Temperature Anomaly: +0.92°C</li>
+                        <li>Ocean Heat Content: +228 ZJ</li>
+                        <li>Greenhouse Gas Index: 1.45</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Actions Tab -->
+            <div class="tab-content" id="actions">
+                <div class="card">
+                    <h2>Your Carbon Footprint</h2>
+                    <div class="data-chart">[Carbon Footprint Calculator]</div>
+                </div>
+                <div class="card">
+                    <h2>Take Action</h2>
+                    <ul>
+                        <li>Reduce energy consumption</li>
+                        <li>Use public transportation</li>
+                        <li>Support renewable energy</li>
+                        <li>Reduce waste</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- News Tab -->
+            <div class="tab-content" id="news">
+                <div class="card">
+                    <h2>Latest Updates</h2>
+                    <article>
+                        <h3>Global Climate Summit 2025</h3>
+                        <p>World leaders gather to discuss new emission targets...</p>
+                    </article>
+                </div>
+                <div class="card">
+                    <h2>Research Highlights</h2>
+                    <article>
+                        <h3>New Study on Ocean Acidification</h3>
+                        <p>Scientists discover increasing impact on marine life...</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabbar">
+            <div class="tab-item active" onclick="switchTab('home')">
+                <div class="tab-icon">🏠</div>
+                <span>Home</span>
+            </div>
+            <div class="tab-item" onclick="switchTab('data')">
+                <div class="tab-icon">📊</div>
+                <span>Data</span>
+            </div>
+            <div class="tab-item" onclick="switchTab('actions')">
+                <div class="tab-icon">🌱</div>
+                <span>Actions</span>
+            </div>
+            <div class="tab-item" onclick="switchTab('news')">
+                <div class="tab-icon">📰</div>
+                <span>News</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab bar selection
+            document.querySelectorAll('.tab-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+
+            // Update navigation bar title
+            const titles = {
+                'home': 'Climate Overview',
+                'data': 'Climate Data',
+                'actions': 'Take Action',
+                'news': 'Climate News'
+            };
+            document.querySelector('.nav-bar').textContent = titles[tabId];
+        }
+    </script>
+</body>
+</html>
